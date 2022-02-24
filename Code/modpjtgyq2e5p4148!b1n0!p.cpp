@@ -1,5 +1,6 @@
 // #include "stdheaders.h"
 
+flt playerSpeed = 0.01;
 
 
 class _Object
@@ -17,19 +18,19 @@ public:
    
    bool collidePlayer(Player p)
    {
-      if(p.getRight() + 1 == T.x)
+      if(p.getRight() + playerSpeed == T.x)
       {
          return true;
       }
-      if(p.getLeft() - 1 == T.w)
+      if(p.getLeft() - playerSpeed == T.w)
       {
          return true;
       }
-      if(p.getBottom() + 1 == T.y)
+      if(p.getBottom() + playerSpeed == T.y)
       {
          return true;
       }
-      if(p.getTop() - 1 == T.h)
+      if(p.getTop() - playerSpeed == T.h)
       {
          return true;
       }
@@ -113,7 +114,6 @@ flt yVel = 0;
 
 bool Update()
 {
-   static flt playerSpeed = 0.01;
    
    if(Kb.b(KB_A))
    {
