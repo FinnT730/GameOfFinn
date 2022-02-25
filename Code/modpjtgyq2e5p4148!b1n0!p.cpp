@@ -18,19 +18,26 @@ public:
    
    bool collidePlayer(Player p)
    {
-      if(p.getRight() + playerSpeed == T.x)
+      // for the with
+      for(flt i = p.x;  i < p.w;  i += 0.1/10)
+         {
+            if()
+         }
+      
+      if(p.getRight() + 0.1 / playerSpeed == T.x)
+      {
+         
+         return true;
+      }
+      if(p.getLeft() - 0.1 / playerSpeed == T.w)
       {
          return true;
       }
-      if(p.getLeft() - playerSpeed == T.w)
+      if(p.getBottom() + 0.1 / playerSpeed == T.y)
       {
          return true;
       }
-      if(p.getBottom() + playerSpeed == T.y)
-      {
-         return true;
-      }
-      if(p.getTop() - playerSpeed == T.h)
+      if(p.getTop() - 0.1 / playerSpeed == T.h)
       {
          return true;
       }
@@ -53,7 +60,7 @@ public:
    // get the bottom of the player
    static flt getBottom()
    {
-      return y + h;
+      return h;
    }
    
    static flt getTop()
@@ -68,7 +75,7 @@ public:
    
    static flt getRight()
    {
-      return x + w;
+      return w;
    }
    
 }
